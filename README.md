@@ -1,5 +1,8 @@
-# OpenSea-bulk-update-metadata
-Update metadata for Polygon (MATIC) NFTs with Selenium
+# OpenSea collection metadata bulk update
+Update metadata for an entire NFT collection on OpenSea NFTs
+
+- Polygon (MATIC) compatible
+- Uses Selenium automated browser
 
 This bot will automatically click the update button for all of the NFTs in the collection.
 
