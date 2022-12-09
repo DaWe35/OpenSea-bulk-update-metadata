@@ -29,13 +29,13 @@ for asset in settings.ASSET_LIST:
     else:
         # Refresh metadata and verify if query succeeded
         try:
-            driver.find_element(by=By.XPATH, value="//section[@class='item--header']//button[1]").click()
+            driver.find_element(by=By.XPATH, value='//*[@id="main"]/div/div/div/div[1]/div/div[1]/div[2]/section[1]/div[1]/div[2]/div/button[2]').click()
         except NoSuchElementException:
             settings.VERBOSE and print('Unable to refresh asset:', asset)
             error_assets.append(asset)
         time.sleep(1)
         try:
-            driver.find_element(by=By.XPATH, value="//div[normalize-space()='timer']")
+            driver.find_element(by=By.XPATH, value='//*[@id="tippy-16"]/div/div/div/ul/li[1]/button').click()
             refreshed_assets.append(asset)
         except NoSuchElementException:
             settings.VERBOSE and print('Unable to verify refresh for asset:', asset)
