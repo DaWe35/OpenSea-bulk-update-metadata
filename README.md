@@ -2,7 +2,7 @@
 Update metadata for an entire NFT collection on OpenSea NFTs
 
 # Update as a Service
-If you don't know how to do it, you can buy my Update pacgake. Just contact me: https://coolhd.hu/contact/
+If you don't know how to do it, you can buy my Update package. Just contact me: https://coolhd.hu/contact/
 
 - Polygon (MATIC) compatible
 - Uses Selenium automated browser
