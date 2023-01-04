@@ -21,3 +21,9 @@ VERBOSE = False
 
 # skip assets what are already indexed by OpenSea (only index assets with "content unavailable yet" label)
 SKIP_INDEXED = True
+
+# Save errors in a file
+SAVE_IN_FILE = False
+
+# Refresh assets from the error file
+REFRESH_FROM_FILE = False
