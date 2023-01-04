@@ -18,6 +18,10 @@ This bot will automatically click the update button for all of the NFTs in the c
 
 - Edit settings.py
 
+- Create a virtual environnement: `python3 -m venv venv`
+
+- Start it: `source ./venv/bin/activate`
+
 - Install requirements: `pip install -r requirements.txt`
 
 - Run: `python main.py`
