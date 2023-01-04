@@ -14,7 +14,7 @@ error_assets = []
 if settings.REFRESH_FROM_FILE:
     settings.VERBOSE and print("[+] Refreshing from the error file")
     try:
-        f = open('errors.txt', 'r')
+        f = open(settings.ERROR_FILE_NAME, 'r')
     except:
         print("[-] There are no error file")
         quit("Quitting...")
@@ -57,11 +57,11 @@ error_assets = list(set(error_assets))
 if settings.REFRESH_FROM_FILE:
     # Erase the content of the error file
     settings.VERBOSE and print("[+] Erasing the content of the error file")
-    open('errors.txt', 'w').close()
+    open(settings.ERROR_FILE_NAME, 'w').close()
 
 if settings.SAVE_IN_FILE:
-    settings.VERBOSE and print("[+] Saving all errors in the error file ['errors.txt']")
-    f = open("errors.txt", "a")
+    settings.VERBOSE and print(f"[+] Saving all errors in the error file [{settings.ERROR_FILE_NAME}]")
+    f = open(settings.ERROR_FILE_NAME, "a")
     f.write("\n".join(error_assets) + "\n")
     f.close()
 
