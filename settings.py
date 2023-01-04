@@ -1,4 +1,12 @@
-# chain (ethereum or matic)
+# chain:
+#   - arbitrum
+#   - avalanche
+#   - bsc
+#   - ethereum
+#   - klaytn
+#   - optimism
+#   - matic
+#   - solana
 CHAIN = 'matic'
 
 # contract address
