@@ -1,4 +1,12 @@
-# chain (ethereum or matic)
+# chain:
+#   - arbitrum
+#   - avalanche
+#   - bsc
+#   - ethereum
+#   - klaytn
+#   - optimism
+#   - matic
+#   - solana
 CHAIN = 'matic'
 
 # contract address
@@ -13,3 +21,12 @@ VERBOSE = False
 
 # skip assets what are already indexed by OpenSea (only index assets with "content unavailable yet" label)
 SKIP_INDEXED = True
+
+# Error file name
+ERROR_FILE_NAME = "errors.txt"
+
+# Save errors in a file
+SAVE_IN_FILE = False
+
+# Refresh assets from the error file
+REFRESH_FROM_FILE = False

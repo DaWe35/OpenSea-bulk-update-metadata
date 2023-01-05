@@ -2,7 +2,7 @@
 Update metadata for an entire NFT collection on OpenSea NFTs
 
 # Update as a Service
-If you don't know how to do it, you can buy my Update pacgake. Just contact me: https://coolhd.hu/contact/
+If you don't know how to do it, you can buy my Update package. Just contact me: https://coolhd.hu/contact/
 
 - Polygon (MATIC) compatible
 - Uses Selenium automated browser
@@ -17,6 +17,10 @@ This bot will automatically click the update button for all of the NFTs in the c
 - Install Chrome
 
 - Edit settings.py
+
+- Create a virtual environnement: `python3 -m venv venv`
+
+- Start it: `source ./venv/bin/activate`
 
 - Install requirements: `pip install -r requirements.txt`
 
