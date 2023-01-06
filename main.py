@@ -6,6 +6,15 @@ from selenium.webdriver.chrome.service import Service
 from selenium.common.exceptions import NoSuchElementException
 from webdriver_manager.chrome import ChromeDriverManager
 
+# Automatically get the good url for the selected chain
+try:
+    URL = [url for url, names in settings.SUPPORTED_CHAINS.items() if settings.CHAIN in names][0]
+except:
+    print("[-] Unknown chain")
+    print("\tPlease check that you entered a chain from the supported chain list")
+    print("\tOpen an issue if you still have a problem")
+    quit("Quitting...")
+
 driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
 refreshed_assets = []
 skipped_assets = []
@@ -23,7 +32,7 @@ if settings.REFRESH_FROM_FILE:
 
 for asset in settings.ASSET_LIST:
     # open page and wait
-    driver.get(f'{settings.URL}/{settings.CHAIN}/{settings.CONTRACT_ADDRESS}/{asset}')
+    driver.get(f'{URL}/{settings.CHAIN}/{settings.CONTRACT_ADDRESS}/{asset}')
     time.sleep(2)
 
     # check if content is already indexed by OpenSea

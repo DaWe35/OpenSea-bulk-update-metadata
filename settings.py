@@ -40,8 +40,7 @@ SAVE_IN_FILE = False
 # Refresh assets from the error file
 REFRESH_FROM_FILE = False
 
-# Automatically get the good url for the selected chain
-chains = {
+SUPPORTED_CHAINS = {
     "https://opensea.io/assets": [ # Mainnet
         "arbitrum",
         "avalanche",
@@ -63,11 +62,3 @@ chains = {
         "soldev"
     ]
 }
-
-try:
-    URL = [url for url, names in chains.items() if CHAIN in names][0]
-except:
-    print("[-] Unknown chain")
-    print("\tPlease check that you entered a chain from the supported chain list")
-    print("\tOpen an issue if you still have a problem")
-    quit("Quitting...")
