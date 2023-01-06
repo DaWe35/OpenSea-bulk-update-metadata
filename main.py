@@ -24,7 +24,7 @@ if settings.REFRESH_FROM_FILE:
 for asset in settings.ASSET_LIST:
     # open page and wait
     driver.get(f'https://opensea.io/assets/{settings.CHAIN}/{settings.CONTRACT_ADDRESS}/{asset}')
-    time.sleep(3)
+    time.sleep(2)
 
     # check if content is already indexed by OpenSea
     try:
@@ -39,13 +39,15 @@ for asset in settings.ASSET_LIST:
     else:
         # Refresh metadata and verify if query succeeded
         try:
-            driver.find_element(by=By.XPATH, value="//section[@class='item--header1']//button[1]").click()
+            driver.find_element(by=By.XPATH, value="//button[@aria-label='More']").click()
+            time.sleep(.4)
+            driver.find_element(by=By.XPATH, value="//span[text()='Refresh metadata']").click()
         except NoSuchElementException:
             settings.VERBOSE and print('[-] Unable to refresh asset:', asset)
             error_assets.append(str(asset))
-        time.sleep(1)
+        time.sleep(.8)
         try:
-            driver.find_element(by=By.XPATH, value="//div[normalize-space()='timer']")
+            driver.find_element(by=By.XPATH, value="//div[contains(text(),'this item for an update')]")
             refreshed_assets.append(asset)
         except NoSuchElementException:
             settings.VERBOSE and print('[-] Unable to verify refresh for asset:', asset)
@@ -72,4 +74,4 @@ print('\t[+] error_assets:', error_assets)
 print('')
 print('\t[+] Total refreshed assets:', len(refreshed_assets))
 print('\t[+] Total skipped assets:', len(skipped_assets))
-print('\t[+] Total error assets:', len(error_assets))
+print('\t[+] Total error assets:', len(error_assets))	
