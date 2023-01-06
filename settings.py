@@ -65,7 +65,7 @@ chains = {
 }
 
 try:
-    URL = [env for env, names in chains.items() if CHAIN in names][0]
+    URL = [url for url, names in chains.items() if CHAIN in names][0]
 except:
     print("[-] Unknown chain")
     print("\tPlease check that you entered a chain from the supported chain list")
