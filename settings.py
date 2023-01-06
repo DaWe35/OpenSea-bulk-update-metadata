@@ -1,4 +1,4 @@
-# chain:
+## Mainnet chains:
 #   - arbitrum
 #   - avalanche
 #   - bsc
@@ -7,6 +7,15 @@
 #   - optimism
 #   - matic
 #   - solana
+## Testnet chains:
+#   - arbitrum-goerli
+#   - avalanche-fuji
+#   - bsc-testnet
+#   - baobab
+#   - goerli
+#   - mumbai
+#   - optimism-goerli
+#   - soldev
 CHAIN = 'matic'
 
 # contract address
