@@ -1,4 +1,4 @@
-# chain:
+## Mainnet chains:
 #   - arbitrum
 #   - avalanche
 #   - bsc
@@ -7,6 +7,15 @@
 #   - optimism
 #   - matic
 #   - solana
+## Testnet chains:
+#   - arbitrum-goerli
+#   - avalanche-fuji
+#   - bsc-testnet
+#   - baobab
+#   - goerli
+#   - mumbai
+#   - optimism-goerli
+#   - soldev
 CHAIN = 'matic'
 
 # contract address
@@ -20,7 +29,7 @@ ASSET_LIST = list(range(11, 1000))
 VERBOSE = False
 
 # skip assets what are already indexed by OpenSea (only index assets with "content unavailable yet" label)
-SKIP_INDEXED = True
+SKIP_INDEXED = False
 
 # Error file name
 ERROR_FILE_NAME = "errors.txt"
@@ -30,3 +39,26 @@ SAVE_IN_FILE = False
 
 # Refresh assets from the error file
 REFRESH_FROM_FILE = False
+
+SUPPORTED_CHAINS = {
+    "https://opensea.io/assets": [ # Mainnet
+        "arbitrum",
+        "avalanche",
+        "bsc",
+        "ethereum",
+        "klaytn",
+        "optimism",
+        "matic",
+        "solana"
+    ],
+    "https://testnets.opensea.io/assets": [    # Testnet
+        "arbitrum-goerli",
+        "avalanche-fuji",
+        "bsc-testnet",
+        "baobab",
+        "goerli",
+        "mumbai",
+        "optimism-goerli",
+        "soldev"
+    ]
+}
