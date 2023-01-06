@@ -23,7 +23,7 @@ if settings.REFRESH_FROM_FILE:
 
 for asset in settings.ASSET_LIST:
     # open page and wait
-    driver.get(f'https://opensea.io/assets/{settings.CHAIN}/{settings.CONTRACT_ADDRESS}/{asset}')
+    driver.get(f'{settings.URL}/{settings.CHAIN}/{settings.CONTRACT_ADDRESS}/{asset}')
     time.sleep(2)
 
     # check if content is already indexed by OpenSea

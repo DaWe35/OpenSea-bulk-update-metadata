@@ -29,7 +29,7 @@ ASSET_LIST = list(range(11, 1000))
 VERBOSE = False
 
 # skip assets what are already indexed by OpenSea (only index assets with "content unavailable yet" label)
-SKIP_INDEXED = True
+SKIP_INDEXED = False
 
 # Error file name
 ERROR_FILE_NAME = "errors.txt"
@@ -39,3 +39,35 @@ SAVE_IN_FILE = False
 
 # Refresh assets from the error file
 REFRESH_FROM_FILE = False
+
+# Automatically get the good url for the selected chain
+chains = {
+    "https://opensea.io/assets": [ # Mainnet
+        "arbitrum",
+        "avalanche",
+        "bsc",
+        "ethereum",
+        "klaytn",
+        "optimism",
+        "matic",
+        "solana"
+    ],
+    "https://testnets.opensea.io/assets": [    # Testnet
+        "arbitrum-goerli",
+        "avalanche-fuji",
+        "bsc-testnet",
+        "baobab",
+        "goerli",
+        "mumbai",
+        "optimism-goerli",
+        "soldev"
+    ]
+}
+
+try:
+    URL = [env for env, names in chains.items() if CHAIN in names][0]
+except:
+    print("[-] Unknown chain")
+    print("\tPlease check that you entered a chain from the supported chain list")
+    print("\tOpen an issue if you still have a problem")
+    quit("Quitting...")
